@@ -118,6 +118,14 @@
 .rounded-xl { border-radius: var(--radius-xl); }
 .rounded-full { border-radius: var(--radius-full); }
 
+/* Gap Utilities */
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+.gap-2xl { gap: var(--spacing-2xl); }
+
 /* Text Size Utilities */
 .text-xs { font-size: var(--text-xs); }
 .text-sm { font-size: var(--text-sm); }

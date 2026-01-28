@@ -1,20 +1,30 @@
 import { cn } from '../../utils/cn';
 import type { MessageRole } from '../../types/chat';
 
+type AvatarSize = 'sm' | 'md' | 'lg';
+
 interface AvatarProps {
   role: MessageRole;
+  size?: AvatarSize;
   className?: string;
 }
 
-export const Avatar = ({ role, className }: AvatarProps) => {
+const sizeStyles = {
+  sm: 'w-6 h-6 text-xs',
+  md: 'w-8 h-8 text-sm',
+  lg: 'w-10 h-10 text-base',
+};
+
+export const Avatar = ({ role, size = 'md', className }: AvatarProps) => {
   if (role === 'user') {
     return (
       <div
         className={cn(
-          'flex items-center justify-center rounded-full w-8 h-8 text-white font-medium',
+          'flex items-center justify-center rounded-full font-medium',
+          sizeStyles[size],
           className
         )}
-        style={{ backgroundColor: '#5436DA' }}
+        style={{ backgroundColor: 'var(--color-user-avatar)' }}
       >
         U
       </div>
@@ -24,7 +34,8 @@ export const Avatar = ({ role, className }: AvatarProps) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-center rounded-full w-8 h-8 text-white',
+        'flex items-center justify-center rounded-full',
+        sizeStyles[size],
         className
       )}
       style={{ backgroundColor: 'var(--color-accent)' }}
