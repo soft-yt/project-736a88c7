@@ -7,6 +7,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   variant?: ButtonVariant;
   fullWidth?: boolean;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -27,6 +29,8 @@ export const Button = ({
   size = 'md',
   variant = 'primary',
   fullWidth = false,
+  leftIcon,
+  rightIcon,
   className,
   disabled,
   children,
@@ -46,7 +50,9 @@ export const Button = ({
       disabled={disabled}
       {...props}
     >
+      {leftIcon}
       {children}
+      {rightIcon}
     </button>
   );
 };

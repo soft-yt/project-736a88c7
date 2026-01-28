@@ -28,10 +28,10 @@ export const ChatArea = ({
   return (
     <div className={cn('flex-1 flex flex-col min-w-0', className)}>
       {/* Mobile Header */}
-      <header className="flex items-center justify-between px-4 py-3 border-b border-[var(--color-border)] md:hidden">
+      <header className="flex items-center justify-between px-lg py-md border-b border-[var(--color-border)] md:hidden">
         <button
           onClick={onMobileMenuClick}
-          className="p-2 hover:bg-[var(--color-hover)] rounded"
+          className="p-sm hover:bg-[var(--color-hover)] rounded-md"
         >
           <MenuIcon className="w-6 h-6" />
         </button>
@@ -40,7 +40,7 @@ export const ChatArea = ({
       </header>
 
       {/* Desktop Header */}
-      <header className="hidden md:flex items-center justify-between px-4 py-3 border-b border-[var(--color-border)]">
+      <header className="hidden md:flex items-center justify-between px-lg py-md border-b border-[var(--color-border)]">
         <h1 className="text-lg font-semibold">ChatGPT</h1>
       </header>
 
@@ -63,8 +63,8 @@ export const ChatArea = ({
               />
             ))}
             {isStreaming && (
-              <div className="py-6 border-b border-[var(--color-border)]">
-                <div className="max-w-3xl mx-auto px-4 flex gap-4">
+              <div className="py-2xl border-b border-[var(--color-border)]">
+                <div className="max-w-3xl mx-auto px-lg flex gap-lg">
                   <div className="flex-1 min-w-0">
                     <div className="flex gap-1">
                       <span className="w-2 h-2 bg-[var(--color-text-secondary)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />

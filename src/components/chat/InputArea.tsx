@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { cn } from '../../utils/cn';
+import { Button } from '../ui/Button';
 import { SendIcon, AttachIcon } from '../ui/Icons';
 
 interface InputAreaProps {
@@ -27,11 +28,11 @@ export const InputArea = ({ onSendMessage, disabled = false, className }: InputA
 
   return (
     <div className={cn('border-t border-[var(--color-border)]', className)}>
-      <div className="max-w-3xl mx-auto p-4">
+      <div className="max-w-3xl mx-auto py-lg px-lg">
         {/* Input Container */}
-        <div className="relative flex items-end gap-2 bg-[var(--color-bg-main)] rounded-lg border border-[var(--color-border)] p-3">
+        <div className="relative flex items-end gap-md bg-[var(--color-bg-main)] rounded-md border border-[var(--color-border)] py-md px-md">
           <button
-            className="p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+            className="p-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
             disabled={disabled}
           >
             <AttachIcon className="w-5 h-5" />
@@ -47,27 +48,21 @@ export const InputArea = ({ onSendMessage, disabled = false, className }: InputA
             className={cn(
               'flex-1 bg-transparent text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] resize-none outline-none max-h-48 overflow-y-auto'
             )}
-            style={{
-              minHeight: '24px',
-            }}
+            style={{ minHeight: '24px' }}
           />
 
-          <button
+          <Button
             onClick={handleSend}
             disabled={disabled || !input.trim()}
-            className={cn(
-              'p-2 rounded transition-colors',
-              input.trim() && !disabled
-                ? 'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]'
-                : 'text-[var(--color-text-secondary)] cursor-not-allowed'
-            )}
+            size="sm"
+            leftIcon={<SendIcon className="w-4 h-4" />}
           >
-            <SendIcon className="w-4 h-4" />
-          </button>
+            Send
+          </Button>
         </div>
 
         {/* Footer Text */}
-        <p className="text-xs text-[var(--color-text-secondary)] text-center mt-2">
+        <p className="text-xs text-[var(--color-text-secondary)] text-center mt-md">
           ChatGPT can make mistakes. Consider checking important information.
         </p>
       </div>

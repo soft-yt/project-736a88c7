@@ -1,4 +1,5 @@
 import { cn } from '../../utils/cn';
+import { Button } from '../ui/Button';
 import { PlusIcon, TrashIcon } from '../ui/Icons';
 import type { ChatHistory } from '../../types/chat';
 
@@ -25,22 +26,24 @@ export const Sidebar = ({
       )}
     >
       {/* New Chat Button */}
-      <div className="p-3 border-b border-[var(--color-border)]">
-        <button
+      <div className="py-md px-lg border-b border-[var(--color-border)]">
+        <Button
           onClick={onNewChat}
-          className="w-full flex items-center gap-3 px-3 py-3 rounded-md border border-[var(--color-border)] hover:bg-[var(--color-hover)] transition-colors"
+          variant="secondary"
+          size="sm"
+          fullWidth
+          leftIcon={<PlusIcon className="w-4 h-4" />}
         >
-          <PlusIcon className="w-4 h-4" />
-          <span className="text-sm">New chat</span>
-        </button>
+          New chat
+        </Button>
       </div>
 
       {/* Chat History List */}
-      <nav className="flex-1 overflow-y-auto py-2">
+      <nav className="flex-1 overflow-y-auto py-md">
         {chatHistory.map((chat) => (
           <div
             key={chat.id}
-            className="group flex items-center gap-2 px-3 py-2 mx-2 rounded-md hover:bg-[var(--color-hover)] cursor-pointer"
+            className="group flex items-center gap-md px-md py-sm mx-sm rounded-md hover:bg-[var(--color-hover)] cursor-pointer"
             onClick={() => onSelectChat?.(chat.id)}
           >
             <span className="flex-1 text-sm truncate">{chat.title}</span>
@@ -49,7 +52,7 @@ export const Sidebar = ({
                 e.stopPropagation();
                 onDeleteChat?.(chat.id);
               }}
-              className="opacity-0 group-hover:opacity-100 p-1 hover:text-red-400 transition-opacity"
+              className="opacity-0 group-hover:opacity-100 p-xs hover:text-red-400 transition-opacity"
             >
               <TrashIcon className="w-4 h-4" />
             </button>
