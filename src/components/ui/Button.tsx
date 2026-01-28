@@ -19,10 +19,26 @@ const sizeStyles: Record<ButtonSize, string> = {
 };
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]',
-  secondary: 'bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)] hover:bg-[var(--color-hover)]',
-  ghost: 'bg-transparent text-[var(--color-text-primary)] hover:bg-[var(--color-hover)]',
-  danger: 'bg-red-500 text-white hover:bg-red-600',
+  primary:
+    'bg-[var(--color-accent)] text-white ' +
+    'hover:bg-[var(--color-accent-hover)] ' +
+    'active:bg-[var(--color-accent-active)] ' +
+    'focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2',
+  secondary:
+    'bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)] ' +
+    'hover:bg-[var(--color-hover)] ' +
+    'active:bg-[var(--color-hover)] ' +
+    'focus-visible:ring-2 focus-visible:ring-[var(--color-border)]',
+  ghost:
+    'bg-transparent text-[var(--color-text-primary)] ' +
+    'hover:bg-[var(--color-hover)] ' +
+    'active:bg-[var(--color-hover)] ' +
+    'focus-visible:bg-[var(--color-hover)]',
+  danger:
+    'bg-red-500 text-white ' +
+    'hover:bg-red-600 ' +
+    'active:bg-red-700 ' +
+    'focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2',
 };
 
 export const Button = ({
@@ -39,8 +55,7 @@ export const Button = ({
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center gap-2 font-medium rounded-md transition-colors',
-        'focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2',
+        'inline-flex items-center justify-center gap-2 font-medium rounded-md transition-all',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         sizeStyles[size],
         variantStyles[variant],
