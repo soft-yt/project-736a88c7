@@ -58,7 +58,7 @@ export const InputArea = ({ onSendMessage, disabled = false, className }: InputA
             className={cn(
               'p-2 rounded transition-colors',
               input.trim() && !disabled
-                ? 'bg-[var(--color-text-primary)] text-[var(--color-bg-main)] hover:bg-white'
+                ? 'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]'
                 : 'text-[var(--color-text-secondary)] cursor-not-allowed'
             )}
           >

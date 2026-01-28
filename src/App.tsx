@@ -5,15 +5,12 @@ import { Sidebar } from './components/layout/Sidebar'
 import { ChatArea } from './components/chat/ChatArea'
 import { InputArea } from './components/chat/InputArea'
 import { useChat } from './hooks/useChat'
+import { initialChats } from './data/mockData'
 import type { ChatHistory } from './types/chat'
 
 function App() {
   const { messages, isStreaming, sendMessage } = useChat()
-  const [chatHistory, setChatHistory] = useState<ChatHistory[]>([
-    { id: '1', title: 'Previous conversation' },
-    { id: '2', title: 'Help with coding' },
-    { id: '3', title: 'Creative writing' }
-  ])
+  const [chatHistory, setChatHistory] = useState<ChatHistory[]>(initialChats)
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleNewChat = () => {

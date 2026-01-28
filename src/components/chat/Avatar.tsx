@@ -27,7 +27,7 @@ export const Avatar = ({ role, className }: AvatarProps) => {
         'flex items-center justify-center rounded-full w-8 h-8 text-white',
         className
       )}
-      style={{ backgroundColor: '#19C37D' }}
+      style={{ backgroundColor: 'var(--color-accent)' }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

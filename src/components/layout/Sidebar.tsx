@@ -20,7 +20,7 @@ export const Sidebar = ({
   return (
     <aside
       className={cn(
-        'hidden md:flex flex-col w-64 bg-[var(--color-bg-sidebar)] text-[var(--color-text-primary)]',
+        'flex flex-col w-64 h-full bg-[var(--color-bg-sidebar)] text-[var(--color-text-primary)]',
         className
       )}
     >

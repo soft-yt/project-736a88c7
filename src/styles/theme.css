@@ -1,10 +1,19 @@
 :root {
-  --color-bg-main: #343541;
-  --color-bg-sidebar: #202123;
-  --color-bubble-user: #343541;
-  --color-bubble-ai: #444654;
-  --color-text-primary: #ECECF1;
-  --color-text-secondary: #C5C5D2;
-  --color-border: #565869;
-  --color-hover: #2A2B32;
+  /* Основные цвета */
+  --color-bg-main: #ffffff;
+  --color-bg-sidebar: #f9f9f9;
+  --color-bubble-user: #f7f7f8;
+  --color-bubble-ai: #ffffff;
+
+  /* Текст */
+  --color-text-primary: #2d333a;
+  --color-text-secondary: #6e6e80;
+
+  /* Границы и интерактив */
+  --color-border: #e5e5e5;
+  --color-hover: #ececf1;
+
+  /* Акценты */
+  --color-accent: #10a37f;
+  --color-accent-hover: #1a7f64;
 }
