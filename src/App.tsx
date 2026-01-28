@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import './styles/variables.css'
+import './styles/utilities.css'
 import './styles/theme.css'
 import './styles/scrollbar.css'
 import { Sidebar } from './components/layout/Sidebar'
